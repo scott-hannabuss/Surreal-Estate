@@ -1,4 +1,5 @@
-import React, { useState, Button } from "react";
+import React, { useState } from "react";
+import Button from "react-uikit-button";
 import "../styles/AddProperty.css";
 
 const AddProperty = () => {
@@ -8,7 +9,7 @@ const AddProperty = () => {
       city: "Manchester",
       type: "",
       bathrooms: "",
-      bedroom: "",
+      bedrooms: "",
       email: "",
       price: "",
     },
@@ -18,6 +19,7 @@ const AddProperty = () => {
 
   const handleAddProperty = (event) => {
     event.preventDefault();
+    console.log(fields);
   };
   const handleFieldChange = (event) => {
     setFields({ ...fields, [event.target.name]: event.target.value });
@@ -26,7 +28,7 @@ const AddProperty = () => {
   return (
     <div className="addproperty">
       <h1>Add Property</h1>
-      <form onSumbit={handleAddProperty}>
+      <form onSubmit={handleAddProperty}>
         <label htmlFor="title">
           <input
             placeholder="title"
@@ -80,12 +82,12 @@ const AddProperty = () => {
             <option value="3 Bathroom">3 Bathroom</option>
           </select>
         </label>
-        <label htmlFor="bathroom">
+        <label htmlFor="bedrooms">
           <select
             placeholder="Number of bedrooms"
             id="bedrooms"
             name="bedrooms"
-            value={fields.bedroom}
+            value={fields.bedrooms}
             onChange={handleFieldChange}
           >
             <option value="1 Bedrooms">1 Bedroom</option>

@@ -10,8 +10,12 @@ function App() {
     <div className="App">
       <NavBar />
       <Switch>
-        <Route exact path="/" component={Properties} />
-        <Route exact path="/AddProperty" component={AddProperty} />
+        <Route exact path="/">
+          <Properties />
+        </Route>
+        <Route exact path="/AddProperty">
+          <AddProperty />
+        </Route>
       </Switch>
       <header className="App-header">
         <h1>Surreal Estate</h1>
