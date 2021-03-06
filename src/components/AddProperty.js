@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-uikit-button";
+import axios from "axios";
+import Alert from "./Alert";
 import "../styles/AddProperty.css";
 
 const AddProperty = () => {
@@ -13,14 +15,34 @@ const AddProperty = () => {
       email: "",
       price: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
-  const handleAddProperty = (event) => {
-    event.preventDefault();
-    console.log(fields);
+  const handleAddProperty = (e) => {
+    e.preventDefault();
+    setAlert({ message: "", isSuccess: false });
+    axios
+      .post(`http://localhost:4000/api/v1/PropertyListing`, fields)
+      .then(() =>
+        setAlert({
+          message: "Property Added",
+          isSuccess: true,
+        })
+      )
+      .catch(() =>
+        setAlert({
+          message: "Server error. Please try again later.",
+          isSuccess: false,
+        })
+      );
   };
+
   const handleFieldChange = (event) => {
     setFields({ ...fields, [event.target.name]: event.target.value });
   };
@@ -28,6 +50,7 @@ const AddProperty = () => {
   return (
     <div className="addproperty">
       <h1>Add Property</h1>
+      <Alert message={alert.message} success={alert.isSuccess} />
       <form onSubmit={handleAddProperty}>
         <label htmlFor="title">
           <input
