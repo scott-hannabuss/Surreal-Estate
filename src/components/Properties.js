@@ -48,18 +48,21 @@ const Properties = () => {
           <SideBar />
         </div>
         {properties &&
-          properties.map((property) => (
-            <PropertyCard
-              key={property._id}
-              title={property.title}
-              city={property.city}
-              type={property.type}
-              bathrooms={property.bathrooms}
-              bedrooms={property.bedrooms}
-              price={property.price}
-              email={property.email}
-            />
-          ))}
+          properties.map((property) => {
+            console.log(property);
+            return (
+              <PropertyCard
+                key={property._id}
+                title={property.title}
+                city={property.city}
+                type={property.type}
+                bathrooms={property.bathrooms}
+                bedrooms={property.bedrooms}
+                price={property.price}
+                email={property.email}
+              />
+            );
+          })}
       </div>
     </div>
   );
