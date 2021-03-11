@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../styles/App.css";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
@@ -8,10 +9,24 @@ import SavedProperties from "./SavedProperties";
 
 function App() {
   const [userID, setUserID] = useState("");
+  const [savedProperties, setSavedProperties] = useState();
 
   const handleLogin = (response) => {
     setUserID(response.userID);
   };
+
+  useEffect(() => {
+    if (userID) {
+      axios
+        .get("http://localhost:4000/api/v1/Favourite")
+        .then((results) => {
+          setSavedProperties(results.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [userID]);
 
   console.log(userID);
 
@@ -31,7 +46,12 @@ function App() {
         <Route
           exact
           path="/SavedProperties"
-          render={() => <SavedProperties userID={userID} />}
+          render={() => (
+            <SavedProperties
+              savedProperties={savedProperties}
+              userID={userID}
+            />
+          )}
         />
       </Switch>
       <header className="App-header">

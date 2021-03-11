@@ -4,23 +4,39 @@ import PropTypes from "prop-types";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
 
-const SavedProperties = ({ userID }) => {
-  const [savedProperties, setSavedProperties] = useState();
+const SavedProperties = ({ userID, savedProperties }) => {
   const [alert, setAlert] = useState({ message: "" });
+  const [myProperties, setMyProperties] = useState();
+  const [filterFavourites, setFilterFavourites] = useState();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/api/v1/Favourite")
-      .then((results) => {
-        setSavedProperties(results.data);
-      })
-      .catch(() => {
-        setAlert({
-          message: "Server error. Please try again later",
-          isSuccess: false,
-        });
-      });
+    setFilterFavourites(
+      savedProperties &&
+        savedProperties
+          .filter((e) => e.fbUserId === userID)
+          .map((id) => id.propertyListing)
+    );
   }, []);
+
+  useEffect(() => {
+    filterFavourites &&
+      filterFavourites.forEach((e) => {
+        return axios
+          .get(`http://localhost:4000/api/v1/PropertyListing/${e}`)
+          .then((results) => {
+            setMyProperties({
+              results: myProperties..., 
+              myProperties...
+            });
+          })
+          .catch(() => {
+            setAlert({
+              message: "Server error. Please try again later",
+              isSuccess: false,
+            });
+          });
+      });
+  }, [myProperties]);
 
   if (!alert.isSuccess) {
     return <Alert message={alert.message} success={alert.isSuccess} />;
@@ -38,8 +54,8 @@ const SavedProperties = ({ userID }) => {
   return (
     <div className="saved-properties-page">
       <div className="saved-properties">
-        {savedProperties &&
-          savedProperties.map((property) => {
+        {myProperties &&
+          myProperties.map((property) => {
             return (
               <PropertyCard
                 userID={userID}
@@ -63,6 +79,7 @@ const SavedProperties = ({ userID }) => {
 
 SavedProperties.propTypes = {
   userID: PropTypes.number.isRequired,
+  savedProperties: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
 export default SavedProperties;
