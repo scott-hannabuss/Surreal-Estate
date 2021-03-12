@@ -19,14 +19,15 @@ const SavedProperties = ({ userID, savedProperties }) => {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
     filterFavourites &&
       filterFavourites.forEach((e) => {
         return axios
           .get(`http://localhost:4000/api/v1/PropertyListing/${e}`)
           .then((results) => {
             setMyProperties({
-              results: myProperties..., 
-              myProperties...
+              ...myProperties,
+              properties: results.data,
             });
           })
           .catch(() => {
