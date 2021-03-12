@@ -44,7 +44,6 @@ const Properties = ({ userID }) => {
   }
 
   const handleSaveProperty = (propertyId) => {
-    console.log(propertyId);
     axios.post("http://localhost:4000/api/v1/Favourite", {
       propertyListing: propertyId,
       fbUserId: userID,

@@ -28,8 +28,6 @@ function App() {
     }
   }, [userID]);
 
-  console.log(userID);
-
   const handleLogout = () => {
     window.FB.logout(() => {});
     setUserID("");
