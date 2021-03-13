@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "../styles/Propertycard.css";
+// import SavedProperties from "./SavedProperties";
 
 const PropertyCard = (props) => {
   const {
@@ -15,7 +16,19 @@ const PropertyCard = (props) => {
     userID,
     onSaveProperty,
     onDeleteProperty,
+    myProperties,
+    favouriteId,
   } = props;
+
+  const [showDelete, setShowDelete] = useState(false);
+
+  useEffect(() => {
+    if (myProperties && userID) {
+      setShowDelete(true);
+    }
+  }, [myProperties]);
+
+  // myProperties.filter((e) => console.log(propertyId === e.propertyListing._id));
 
   return (
     <div className="property-card">
@@ -26,22 +39,28 @@ const PropertyCard = (props) => {
       <div className="property-card-bedrooms">{bedrooms}</div>
       <div className="property-card-price">{price}</div>
       <div className="property-card-email">{email}</div>
-      {userID && (
+      {userID && !showDelete && (
+        // myProperties.filter((e) => propertyId !== e.propertyListing._id) && (
         <div className="save-button">
           <button type="button" onClick={() => onSaveProperty(propertyId)}>
             Save
           </button>
         </div>
       )}
-      {userID && (
-        <div className="delete-button">
-          <button type="button" onClick={() => onDeleteProperty(propertyId)}>
-            Delete
-          </button>
-        </div>
-      )}
+      {showDelete &&
+        myProperties.filter((e) => propertyId === e.propertyListing._id) && (
+          <div className="delete-button">
+            <button type="button" onClick={() => onDeleteProperty(favouriteId)}>
+              Delete
+            </button>
+          </div>
+        )}
     </div>
   );
+};
+
+PropertyCard.defaultProps = {
+  myProperties: undefined,
 };
 
 PropertyCard.propTypes = {
@@ -56,6 +75,8 @@ PropertyCard.propTypes = {
   onSaveProperty: PropTypes.func.isRequired,
   onDeleteProperty: PropTypes.func.isRequired,
   propertyId: PropTypes.string.isRequired,
+  myProperties: PropTypes.arrayOf(PropTypes.any),
+  favouriteId: PropTypes.string.isRequired,
 };
 
 export default PropertyCard;

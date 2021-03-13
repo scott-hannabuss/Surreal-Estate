@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/App.css";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
@@ -10,6 +10,8 @@ import SavedProperties from "./SavedProperties";
 function App() {
   const [userID, setUserID] = useState("");
   const [savedProperties, setSavedProperties] = useState();
+
+  const [myProperties, setMyProperties] = useState();
 
   const handleLogin = (response) => {
     setUserID(response.userID);
@@ -44,17 +46,20 @@ function App() {
         <Route
           exact
           path="/SavedProperties"
-          render={() => (
-            <SavedProperties
-              savedProperties={savedProperties}
-              userID={userID}
-            />
-          )}
+          render={() =>
+            userID ? (
+              <SavedProperties
+                myProperties={myProperties}
+                setMyProperties={setMyProperties}
+                savedProperties={savedProperties}
+                userID={userID}
+              />
+            ) : (
+              <Redirect to="/" />
+            )
+          }
         />
       </Switch>
-      <header className="App-header">
-        <h1>Surreal Estate</h1>
-      </header>
     </div>
   );
 }

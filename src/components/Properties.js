@@ -8,7 +8,6 @@ import SideBar from "./Sidebar";
 import "../styles/Properties.css";
 
 const Properties = ({ userID }) => {
-  console.log(userID);
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState({ message: "", isSuccess: true });
 
