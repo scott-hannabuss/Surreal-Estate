@@ -50,11 +50,12 @@ const Properties = ({ userID }) => {
   };
 
   return (
-    <div className="properties-page">
-      <div className="properties">
-        <div className="sidebar">
-          <SideBar />
-        </div>
+    <div>
+      <div className="sidebar" />
+      <SideBar />
+      <div />
+      <div className="properties-page">
+        <h1 className="header_properties-page">View Current Properties</h1>
         {properties &&
           properties.map((property) => {
             return (
@@ -66,7 +67,7 @@ const Properties = ({ userID }) => {
                 type={property.type}
                 bathrooms={property.bathrooms}
                 bedrooms={property.bedrooms}
-                price={property.price}
+                price={Number(property.price)}
                 email={property.email}
                 onSaveProperty={handleSaveProperty}
                 propertyId={property._id}

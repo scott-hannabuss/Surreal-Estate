@@ -1,10 +1,32 @@
-.Properties {
-  padding: 0.5rem;
+.properties-page {
+  display: inline-block;
+  width: 85%;
+  /* background-color: white; */
+  background: url(../images/mansion.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  margin-left: 15%;
 }
 
-.Properties > .item {
-  display: inline-block;
-  width: 33.33%;
-  padding: 0.5rem;
-  box-sizing: border-box;
+.header_properties-page {
+  color: white;
+  text-align: center;
+  margin-top: 4%;
+  font-family: "Lato", sans-serif;
+}
+
+@media only screen and (min-width: 751px) and (max-width: 1025px) {
+  .properties-page {
+    text-align: center;
+    justify-content: space-between;
+    width: 75%;
+    margin-left: 25%;
+  }
+  .header_properties-page {
+    margin-top: 7%;
+    margin-bottom: 7%;
+    font-size: 2em;
+  }
 }

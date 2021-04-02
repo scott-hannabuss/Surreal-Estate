@@ -1,4 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Cairo:wght@700&family=Dela+Gothic+One&family=Lato&family=Noto+Sans+TC:wght@700&display=swap");
+
 .addproperty {
   text-align: center;
   padding: 10px;
+  background: url(../images/mansion.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.header_addproperty {
+  color: white;
+  font-family: "Lato", sans-serif;
+  margin-top: 2%;
+}
+
+.add-property_form {
+  border: 1px solid white;
+  text-align: center;
+  padding: 5%;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  width: 50%;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.6);
+  -webkit-backdrop-filter: blur(15.5px);
+  border-radius: 1em;
+  color: black;
+  font-size: 3vmin;
+  font-family: "Lato", sans-serif;
+  display: inline-block;
+}
+
+.add-property_form label {
+  display: block;
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 2%;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.add-property_form input {
+  width: 48%;
+  margin-bottom: 2%;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  border-radius: 25px;
+}
+
+.add-property_form select {
+  width: 50%;
+  margin-bottom: 2%;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  border-radius: 25px;
+}
+
+.add-property-button {
+  font-family: "Lato", sans-serif;
+  padding: 1%;
+  border-radius: 25px;
+  width: 40%;
+  background-color: #12093b;
+  color: white;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 751px) and (max-width: 1025px) {
+  .add-property_form {
+    height: 100vw;
+  }
+  .header_addproperty {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 3em;
+  }
+  .add-property_form input {
+    width: 70%;
+    height: 2em;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font-size: 0.7em;
+  }
+  .add-property_form select {
+    margin-bottom: 2%;
+    margin-top: 2%;
+    width: 70%;
+    height: 2em;
+    font-size: 0.7em;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+  }
+  .add-property-button {
+    margin-top: 2%;
+    margin-bottom: 1%;
+    width: 60%;
+    height: 2em;
+    font-size: 0.9em;
+  }
 }

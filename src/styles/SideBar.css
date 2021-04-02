@@ -1,0 +1,76 @@
+.sidebar {
+  height: 80%;
+  width: 15%;
+  position: fixed;
+  background-color: white;
+  left: 0;
+  padding-top: 20px;
+  font-size: 10px;
+  text-align: left;
+  background-color: white;
+}
+
+.sidebar a {
+  font-family: "Lato", sans-serif;
+  text-decoration: none;
+  text-decoration: underline;
+  font-size: 150%;
+  display: block;
+  margin-bottom: 20%;
+  padding-right: 200%;
+}
+
+.input_sidebar {
+  width: 80%;
+  margin-bottom: 7%;
+  display: block;
+  padding: 0.5%;
+  background-color: #12093b;
+  border-radius: 25px;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.sidebar_search-button {
+  color: black;
+  justify-content: center;
+  align-content: center;
+  display: grid;
+  padding: 0.5%;
+  width: 50%;
+  border-radius: 25px;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar_header {
+  color: black;
+  margin-top: 25%;
+  margin-bottom: 20%;
+  font-family: "Lato", sans-serif;
+  font-size: 150%;
+}
+
+@media only screen and (min-width: 751px) and (max-width: 1025px) {
+  .sidebar {
+    text-align: center;
+    justify-content: space-between;
+    width: 25%;
+    margin-top: 1px;
+    font-size: 0.5em;
+    background-color: white;
+    position: fixed;
+    text-decoration: none;
+  }
+  .sidebar_header {
+    margin-right: 35%;
+    margin-bottom: 20%;
+  }
+  .sidebar a {
+    margin-right: 10%;
+    margin-bottom: 20%;
+    text-decoration: none;
+    text-decoration: underline;
+    color: black;
+  }
+}

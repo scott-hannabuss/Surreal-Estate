@@ -31,13 +31,13 @@ const AddProperty = () => {
       .post(`http://localhost:4000/api/v1/PropertyListing`, fields)
       .then(() =>
         setAlert({
-          message: "Property Added",
+          message: "",
           isSuccess: true,
         })
       )
       .catch(() =>
         setAlert({
-          message: "Server error. Please try again later.",
+          message: "",
           isSuccess: false,
         })
       );
@@ -49,12 +49,12 @@ const AddProperty = () => {
 
   return (
     <div className="addproperty">
-      <h1>Add Property</h1>
+      <h1 className="header_addproperty">Add Property</h1>
       <Alert message={alert.message} success={alert.isSuccess} />
-      <form onSubmit={handleAddProperty}>
+      <form className="add-property_form" onSubmit={handleAddProperty}>
         <label htmlFor="title">
           <input
-            placeholder="title"
+            placeholder="Property Title"
             id="title"
             name="title"
             value={fields.title}
@@ -92,7 +92,7 @@ const AddProperty = () => {
             <option value="Bungalow">Bungalow</option>
           </select>
         </label>
-        <label htmlFor="bathroom">
+        <label data-testid="test-bathroom-label" htmlFor="bathroom">
           <select
             placeholder="Number of bathrooms"
             id="bathroom"
@@ -105,7 +105,7 @@ const AddProperty = () => {
             <option value="3 Bathroom">3 Bathroom</option>
           </select>
         </label>
-        <label htmlFor="bedrooms">
+        <label data-testid="test-bedroom-label" htmlFor="bedrooms">
           <select
             placeholder="Number of bedrooms"
             id="bedrooms"
@@ -122,7 +122,7 @@ const AddProperty = () => {
         </label>
         <label htmlFor="email">
           <input
-            placeholder="email"
+            placeholder="Email"
             id="email"
             name="email"
             value={fields.email}
@@ -131,14 +131,19 @@ const AddProperty = () => {
         </label>
         <label htmlFor="price">
           <input
-            placeholder="price"
+            placeholder="Price"
             id="price"
             name="price"
+            type="text"
+            inputMode="numeric"
+            pattern="[0-9]+"
             value={fields.price}
             onChange={handleFieldChange}
           />
         </label>
-        <Button type="submit">Add</Button>
+        <Button className="add-property-button" type="submit">
+          Add Property!
+        </Button>
       </form>
     </div>
   );

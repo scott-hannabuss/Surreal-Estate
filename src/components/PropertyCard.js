@@ -12,7 +12,7 @@ const PropertyCard = (props) => {
     bathrooms,
     bedrooms,
     price,
-    email,
+    // email,
     userID,
     onSaveProperty,
     onDeleteProperty,
@@ -32,28 +32,34 @@ const PropertyCard = (props) => {
 
   return (
     <div className="property-card">
-      <div className="property-card-title">{title}</div>
+      <div className="property-card-title">Property Title: {title}</div>
       <div className="property-card-city">{city}</div>
       <div className="property-card-type">{type}</div>
       <div className="property-card-bathrooms">{bathrooms}</div>
       <div className="property-card-bedrooms">{bedrooms}</div>
-      <div className="property-card-price">{price}</div>
-      <div className="property-card-email">{email}</div>
+      <div className="property-card-price">£{price}</div>
+      {/* <div className="property-card-email">Email owner @ {email}</div> */}
       {userID && !showDelete && (
         // myProperties.filter((e) => propertyId !== e.propertyListing._id) && (
-        <div className="save-button">
-          <button type="button" onClick={() => onSaveProperty(propertyId)}>
-            Save
+        <div>
+          <button
+            className="save-button"
+            type="button"
+            onClick={() => onSaveProperty(propertyId)}
+          >
+            Save Property
           </button>
         </div>
       )}
       {showDelete &&
         myProperties.filter((e) => propertyId === e.propertyListing._id) && (
-          <div className="delete-button">
-            <button type="button" onClick={() => onDeleteProperty(favouriteId)}>
-              Delete
-            </button>
-          </div>
+          <button
+            className="delete-button"
+            type="button"
+            onClick={() => onDeleteProperty(favouriteId)}
+          >
+            Delete Property
+          </button>
         )}
     </div>
   );
@@ -70,7 +76,7 @@ PropertyCard.propTypes = {
   bathrooms: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
   city: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
+  // email: PropTypes.string.isRequired,
   userID: PropTypes.string.isRequired,
   onSaveProperty: PropTypes.func.isRequired,
   onDeleteProperty: PropTypes.func.isRequired,

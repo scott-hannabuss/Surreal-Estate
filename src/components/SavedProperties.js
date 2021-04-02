@@ -2,23 +2,12 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import PropertyCard from "./PropertyCard";
+import "../styles/SavedProperties.css";
 // import Alert from "./Alert";
 
 // eslint-disable-next-line no-unused-expressions
 
 const SavedProperties = ({ userID, myProperties, setMyProperties }) => {
-  // const [alert, setAlert] = useState({ message: "" });
-  // const [myFilteredProperties, setMyFilteredProperties] = useState();
-  // const [filterFavourites, setFilterFavourites] = useState();
-
-  // useEffect(() => {
-  //   setFilterFavourites(
-  //     savedProperties &&
-  //       savedProperties
-  //         .filter((e) => e.fbUserId === userID)
-  //         .map((id) => id.propertyListing)
-  //   );
-  // }, []);
   const getFavourites = () => {
     return axios
       .get(
@@ -31,25 +20,6 @@ const SavedProperties = ({ userID, myProperties, setMyProperties }) => {
   };
 
   useEffect(() => {
-    // filterFavourites &&
-    //   filterFavourites.forEach((e) => {
-    //
-    // return axios
-    //   .get(
-    //     `http://localhost:4000/api/v1/Favourite?query={"fbUserId":"${userID}"}&populate=propertyListing`
-    //   )
-    //   .then((results) => {
-    //     setMyProperties(results.data.filter((e) => e.propertyListing));
-    //   })
-    //   .catch((err) => console.error(err));
-    // setAlert({
-    //   message: "Server error. Please try again later",
-    //   isSuccess: false,
-    // });
-
-    // if (!alert.isSuccess) {
-    //   return <Alert message={alert.message} success={alert.isSuccess} />;
-    // }
     getFavourites();
   }, []);
 
@@ -64,6 +34,7 @@ const SavedProperties = ({ userID, myProperties, setMyProperties }) => {
 
   return (
     <div className="saved-properties-page">
+      <h1 className="header_saved-properties">Saved Properties</h1>
       <div className="saved-properties">
         {myProperties &&
           myProperties.map((property) => {

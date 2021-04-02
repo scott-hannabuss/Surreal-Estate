@@ -1,26 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Cairo:wght@700&family=Dela+Gothic+One&family=Lato&family=Noto+Sans+TC:wght@700&display=swap");
+
 .logo {
-  width: 15vw;
+  height: 4em;
+  width: 10em;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-/* .navbar {
-  border-bottom: 5px solid grey;
-  background-color: white;
-} */
-
-.navbar-links {
-  border-bottom: 5px solid grey;
+.navbar {
   background-color: white;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0;
+  align-items: center;
+  text-align: center;
+  top: 0;
   width: 100%;
-  margin: 0;
+  height: 5em;
   list-style-type: none;
+  font-family: "Lato", sans-serif;
+  text-decoration: none;
+  position: sticky;
+  margin-bottom: 1%;
 }
 
-.navbar-links__item {
-  display: inline-block;
-  padding: 10px;
-  list-style-type: none;
+.link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.facebook-logout,
+.facebook-login {
+  align-items: center;
+  background-color: rgb(59, 89, 152);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: flex;
+  margin-right: 2%;
+  height: 3em;
+  width: 10em;
+  font-family: Arial, sans-serif;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: center;
+  text-indent: 0;
+  text-rendering: auto;
+  text-shadow: none;
+  text-transform: none;
+  word-spacing: 0;
+  writing-mode: horizontal-tb;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (min-width: 751px) and (max-width: 1025px) {
+  .navbar {
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.8em;
+    height: 5%;
+  }
+  .facebook-logout,
+  .facebook-login {
+    height: 4em;
+    font-weight: 600;
+    font-size: 0.8em;
+    width: 12em;
+    margin-top: 0.7%;
+  }
+  .logo {
+    margin-left: 5%;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
