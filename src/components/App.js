@@ -19,14 +19,9 @@ function App() {
 
   useEffect(() => {
     if (userID) {
-      axios
-        .get("http://localhost:4000/api/v1/Favourite")
-        .then((results) => {
-          setSavedProperties(results.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      axios.get("http://localhost:4000/api/v1/Favourite").then((results) => {
+        setSavedProperties(results.data);
+      });
     }
   }, [userID]);
 

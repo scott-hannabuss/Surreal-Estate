@@ -15,8 +15,7 @@ const SavedProperties = ({ userID, myProperties, setMyProperties }) => {
       )
       .then((results) => {
         setMyProperties(results.data.filter((e) => e.propertyListing));
-      })
-      .catch((err) => console.error(err));
+      });
   };
 
   useEffect(() => {
