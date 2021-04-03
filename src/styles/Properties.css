@@ -8,6 +8,7 @@
   background-position: center;
   background-size: cover;
   margin-left: 15%;
+  min-height: 100vh;
 }
 
 .header_properties-page {
@@ -23,10 +24,23 @@
     justify-content: space-between;
     width: 75%;
     margin-left: 25%;
+    /* height: auto; */
   }
   .header_properties-page {
     margin-top: 7%;
     margin-bottom: 7%;
     font-size: 2em;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .properties-page {
+    max-width: 70%;
+    margin-left: 30%;
+  }
+  .header_properties-page {
+    font-size: 1.7em;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
   }
 }

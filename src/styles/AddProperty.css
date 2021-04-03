@@ -2,20 +2,21 @@
 
 .addproperty {
   text-align: center;
-  padding: 10px;
   background: url(../images/mansion.jpeg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   min-width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 .header_addproperty {
   color: white;
   font-family: "Lato", sans-serif;
-  margin-top: 2%;
+  padding-bottom: 1%;
+  padding-top: 3%;
+  margin-block-start: 0;
 }
 
 .add-property_form {
@@ -26,7 +27,7 @@
   margin-bottom: 5%;
   width: 50%;
   padding: 1em;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.6);
   -webkit-backdrop-filter: blur(15.5px);
   border-radius: 1em;
@@ -73,27 +74,26 @@
 }
 
 @media only screen and (min-width: 751px) and (max-width: 1025px) {
-  .add-property_form {
-    height: 100vw;
-  }
   .header_addproperty {
-    margin-top: 3%;
-    margin-bottom: 3%;
-    font-size: 3em;
+    margin-bottom: 2%;
+    font-size: 2em;
+    padding-top: 4%;
+    margin-block-start: 0;
   }
+
   .add-property_form input {
-    width: 70%;
+    width: 80%;
     height: 2em;
     margin-bottom: 2%;
     margin-top: 2%;
-    font-size: 0.7em;
+    font-size: 0.6em;
   }
   .add-property_form select {
     margin-bottom: 2%;
     margin-top: 2%;
-    width: 70%;
+    width: 80%;
     height: 2em;
-    font-size: 0.7em;
+    font-size: 0.6em;
     font-family: "Lato", sans-serif;
     text-align: center;
   }
@@ -102,6 +102,35 @@
     margin-bottom: 1%;
     width: 60%;
     height: 2em;
-    font-size: 0.9em;
+    font-size: 0.7em;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .add-property_form {
+    width: 70%;
+    min-height: 80%;
+  }
+  .header_addproperty {
+    font-size: 1.7em;
+    padding-top: 7%;
+    margin-bottom: 3%;
+  }
+  .add-property_form input {
+    width: 70%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 1.2em;
+  }
+  .add-property_form select {
+    width: 70%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 1.2em;
+  }
+  .add-property-button {
+    font-size: 1.2em;
+    width: 60%;
+    margin-top: 3%;
+    margin-bottom: 3%;
   }
 }
