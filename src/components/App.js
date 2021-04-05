@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     if (userID) {
       axios
-        .get("https://surrealestatedatabase.herokuapp.com/Favourite")
+        .get("https://surrealestatedatabase.herokuapp.com/api/v1/Favourite")
         .then((results) => {
           setSavedProperties(results.data);
         });
