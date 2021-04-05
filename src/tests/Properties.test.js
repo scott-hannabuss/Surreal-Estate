@@ -3,8 +3,8 @@ import { render } from "@testing-library/react";
 import Properties from "../components/Properties";
 
 describe("Properties", () => {
-  it.only("renders as expected", () => {
-    const { asFragment } = render(<Properties />);
+  it("renders as expected", () => {
+    const { asFragment } = render(<Properties userID={1234} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

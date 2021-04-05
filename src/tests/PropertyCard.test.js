@@ -15,7 +15,11 @@ describe("Property Card", () => {
     price: 250000,
     city: "Liverpool",
     email: "brucewayne@hotmail.com",
+    onSaveProperty: () => {},
+    userID: "1234",
+    key: "1234",
   };
+
   describe("Property Card renders items based on props", () => {
     beforeEach(() => render(<PropertyCard {...validProps} />));
 

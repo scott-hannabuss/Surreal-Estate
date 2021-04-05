@@ -32,7 +32,7 @@ const SideBar = () => {
         <Link to={buildQueryString("query", { city: "Manchester" }, search)}>
           Manchester
         </Link>
-        <Link to={(buildQueryString("query", { city: "Leeds" }), search)}>
+        <Link to={buildQueryString("query", { city: "Leeds" }, search)}>
           Leeds
         </Link>
         <Link to={buildQueryString("query", { city: "Sheffield" }, search)}>

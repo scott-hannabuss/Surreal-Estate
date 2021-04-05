@@ -2,17 +2,21 @@ import React from "react";
 import { render } from "@testing-library/react";
 import AddProperty from "../components/AddProperty";
 
-describe("AddProperty", () => {
-  it("renders as expected", () => {
+test("renders learn react link", () => {
+  it("renders as expected", async () => {
     const { asFragment } = render(<AddProperty />);
-    expect(asFragment()).toMatchSnapshot();
+    await waitFor(() => {
+      expect(asFragment()).toMatchSnapshot();
+    });
   });
 });
 
-it("renders a bathroom label", () => {
+it("renders a bathroom label", async () => {
   const { getByTestId } = render(<AddProperty />);
   const bathroomLabel = getByTestId("test-bathroom-label");
-  expect(bathroomLabel).toBeTruthy();
+  await waitFor(() => {
+    expect(bathroomLabel).toBeTruthy();
+  });
 });
 
 it("renders a bedroom label", () => {

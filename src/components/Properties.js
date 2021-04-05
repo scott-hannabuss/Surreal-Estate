@@ -13,7 +13,7 @@ const Properties = ({ userID }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/v1/PropertyListing")
+      .get("https://surrealestatedatabase.herokuapp.com/PropertyListing")
       .then((results) => {
         setProperties(results.data);
       })
@@ -28,7 +28,9 @@ const Properties = ({ userID }) => {
   const { search } = useLocation();
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
+      .get(
+        `https://surrealestatedatabase.herokuapp.com/PropertyListing${search}`
+      )
       .then((results) => setProperties(results.data))
       .catch(() => {
         setAlert({
@@ -43,7 +45,7 @@ const Properties = ({ userID }) => {
   }
 
   const handleSaveProperty = (propertyId) => {
-    axios.post("http://localhost:4000/api/v1/Favourite", {
+    axios.post("https://surrealestatedatabase.herokuapp.com/Favourite", {
       propertyListing: propertyId,
       fbUserId: userID,
     });

@@ -8,6 +8,7 @@ describe("Alert", () => {
     expect(getByText(/Error/).textContent).toBe("Error!");
     expect(asFragment()).toMatchSnapshot();
   });
+
   test("displays a success message", () => {
     const { getByText } = render(<Alert message="Success!!!!" success />);
 

@@ -28,7 +28,10 @@ const AddProperty = () => {
     e.preventDefault();
     setAlert({ message: "", isSuccess: false });
     axios
-      .post(`http://localhost:4000/api/v1/PropertyListing`, fields)
+      .post(
+        `https://surrealestatedatabase.herokuapp.com/PropertyListing`,
+        fields
+      )
       .then(() =>
         setAlert({
           message: "",

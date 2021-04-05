@@ -28,8 +28,6 @@ const PropertyCard = (props) => {
     }
   }, [myProperties]);
 
-  // myProperties.filter((e) => console.log(propertyId === e.propertyListing._id));
-
   return (
     <div className="property-card">
       <div className="property-card-title">Property Title: {title}</div>
