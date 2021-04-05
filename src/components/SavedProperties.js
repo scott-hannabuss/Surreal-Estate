@@ -11,7 +11,7 @@ const SavedProperties = ({ userID, myProperties, setMyProperties }) => {
   const getFavourites = () => {
     return axios
       .get(
-        `http://localhost:4000/api/v1/Favourite?query={"fbUserId":"${userID}"}&populate=propertyListing`
+        `https://surrealestatedatabase.herokuapp.com/api/v1/Favourite?query={"fbUserId":"${userID}"}&populate=propertyListing`
       )
       .then((results) => {
         setMyProperties(results.data.filter((e) => e.propertyListing));
@@ -24,10 +24,13 @@ const SavedProperties = ({ userID, myProperties, setMyProperties }) => {
 
   const handleDeleteProperty = (favouriteId) => {
     axios
-      .delete(`http://localhost:4000/api/v1/Favourite/${favouriteId}`, {
-        propertyListing: favouriteId,
-        fbUserId: userID,
-      })
+      .delete(
+        `https://surrealestatedatabase.herokuapp.com/api/v1/Favourite/${favouriteId}`,
+        {
+          propertyListing: favouriteId,
+          fbUserId: userID,
+        }
+      )
       .then(() => getFavourites());
   };
 
