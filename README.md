@@ -1,10 +1,6 @@
 ## Surreal Estate - Project Overview
 
-A mock property website, built using React.
-
-Users can view the properties on sale, and can also list their own properties for sale.
-
-The properties are added and retrieved from a Heroku database.
+A mock property website, built using React. Users can view the properties on sale, and can also list their own properties for sale. The properties are added and retrieved from a Heroku database.
 
 You can view a deployed version of the application at https://surreal-estate-ten.vercel.app/.
 

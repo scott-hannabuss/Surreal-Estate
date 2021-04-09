@@ -11,7 +11,8 @@ const Properties = ({ userID }) => {
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState({ message: "", isSuccess: true });
 
-  // initial function that will get the properties from database to be rendered on homepage
+  // initial function that will get the properties from database to be rendered on homepage 
+  
   useEffect(() => {
     axios
       .get("https://surrealestatedatabase.herokuapp.com/api/v1/PropertyListing")
