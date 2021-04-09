@@ -24,6 +24,8 @@ const AddProperty = () => {
   const [fields, setFields] = useState(initialState.fields);
   const [alert, setAlert] = useState(initialState.alert);
 
+  // adds property to database when form is submitted
+
   const handleAddProperty = (e) => {
     e.preventDefault();
     setAlert({ message: "", isSuccess: false });
