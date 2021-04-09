@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/NavBar.css";
-import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
-import PropTypes from "prop-types";
+// import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+// import PropTypes from "prop-types";
 import logo from "../images/logo.png";
 
-const NavBar = ({ onLogin, userID, onLogout }) => {
+const NavBar = () => {
   return (
     <div className="navbar">
       <li>
@@ -21,7 +21,7 @@ const NavBar = ({ onLogin, userID, onLogout }) => {
           Add Property
         </Link>
       </li>
-      {userID ? (
+      {/* {/* {userID ? (
         <li className="navbar-links__item">
           <Link className="link" to="/SavedProperties">
             Saved Properties
@@ -45,18 +45,15 @@ const NavBar = ({ onLogin, userID, onLogout }) => {
               onClick={renderProps.onClick}
             >
               LOGIN WITH FACEBOOK
-            </button>
-          )}
-        />
-      )}
+            </button> */}
     </div>
   );
 };
 
-NavBar.propTypes = {
-  onLogin: PropTypes.func.isRequired,
-  userID: PropTypes.number.isRequired,
-  onLogout: PropTypes.func.isRequired,
-};
+// NavBar.propTypes = {
+//   onLogin: PropTypes.func.isRequired,
+//   userID: PropTypes.number.isRequired,
+//   onLogout: PropTypes.func.isRequired,
+// };
 
 export default NavBar;

@@ -3,9 +3,6 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import PropertyCard from "./PropertyCard";
 import "../styles/SavedProperties.css";
-// import Alert from "./Alert";
-
-// eslint-disable-next-line no-unused-expressions
 
 const SavedProperties = ({ userID, myProperties, setMyProperties }) => {
   const getFavourites = () => {
