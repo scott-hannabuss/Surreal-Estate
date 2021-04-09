@@ -21,6 +21,9 @@ const NavBar = () => {
           Add Property
         </Link>
       </li>
+
+      {/* potential rendering of savedproperties page if user is signed in */}
+
       {/* {/* {userID ? (
         <li className="navbar-links__item">
           <Link className="link" to="/SavedProperties">

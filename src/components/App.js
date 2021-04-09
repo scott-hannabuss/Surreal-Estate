@@ -8,6 +8,8 @@ import AddProperty from "./AddProperty";
 import SavedProperties from "./SavedProperties";
 
 function App() {
+  // potential logic to see if user is signed in and return their personal favourites if they are
+
   const [userID, setUserID] = useState("");
   const [savedProperties, setSavedProperties] = useState();
 
@@ -40,6 +42,9 @@ function App() {
         <Route exact path="/AddProperty">
           <AddProperty />
         </Route>
+
+        {/* Potential rendering of login option dependent on if user id is present */}
+
         <Route
           exact
           path="/SavedProperties"

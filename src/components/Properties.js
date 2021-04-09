@@ -11,6 +11,7 @@ const Properties = ({ userID }) => {
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState({ message: "", isSuccess: true });
 
+  // initial function that will get the properties from database to be rendered on homepage
   useEffect(() => {
     axios
       .get("https://surrealestatedatabase.herokuapp.com/api/v1/PropertyListing")
@@ -24,6 +25,8 @@ const Properties = ({ userID }) => {
         });
       });
   }, []);
+
+  // logic for potential function that will search property by name
 
   const { search } = useLocation();
   useEffect(() => {
@@ -43,6 +46,8 @@ const Properties = ({ userID }) => {
   if (alert.message) {
     return <Alert message={alert.message} success={alert.isSuccess} />;
   }
+
+  // function to save properties against user ID in separate section of database
 
   const handleSaveProperty = (propertyId) => {
     axios.post("https://surrealestatedatabase.herokuapp.com/api/v1/Favourite", {

@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import "../styles/SideBar.css";
 import qs from "qs";
 
+// logic that allows searchbar to filter by city name and price
+
 const buildQueryString = (operation, valueObj, search) => {
   const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
 

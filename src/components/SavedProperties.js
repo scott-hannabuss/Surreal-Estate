@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import PropertyCard from "./PropertyCard";
 import "../styles/SavedProperties.css";
 
+// potential logic for saving properties
+
 const SavedProperties = ({ userID, myProperties, setMyProperties }) => {
   const getFavourites = () => {
     return axios

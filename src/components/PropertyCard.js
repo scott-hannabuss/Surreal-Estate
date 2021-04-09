@@ -40,6 +40,8 @@ const PropertyCard = (props) => {
       {userID && !showDelete && (
         // myProperties.filter((e) => propertyId !== e.propertyListing._id) && (
         <div>
+          {/* render save or delete button after user sign-in so they can save and delete favourite properties */}
+
           <button
             className="save-button"
             type="button"

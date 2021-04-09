@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+// potential logic to render alert if property successfully added or if adding property fails
 const Alert = ({ message, success }) => {
   if (!message) return null;
 
